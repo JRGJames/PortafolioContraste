@@ -1,0 +1,72 @@
+// Definición de variables de estilo para el Modo Claro
+$border-color: #e4e2e2;              // Color para los bordes
+$box-shadow-color: rgba(214, 212, 212, 0.663);  // Color para sombras
+$background-colorCategorias: rgb(201, 201, 201);  // Color de fondo para categorías
+$colorPalabras: rgb(119, 117, 117);  // Color de texto para palabras
+$background-color: rgb(255, 255, 255);  // Color de fondo principal
+$colorFondoBoton: rgb(0, 0, 0);  // Color de fondo para botones
+$colorBoton: rgb(255, 255, 255);  // Color de texto para botones
+$colorTexto: black;  // Color de texto predeterminado
+
+// Definición de un mixin que aplica los estilos para el Modo Claro
+@mixin definEstilo {
+  body {
+    background-color: $background-color;  // Aplicar el color de fondo principal al cuerpo
+  }
+
+  #header {
+    border-bottom: 1px solid $border-color;  // Aplicar un borde inferior con el color definido
+  }
+
+  #contenedor {
+    border: 1px solid $border-color;  // Aplicar un borde con el color definido
+    box-shadow:
+      5px 0 10px $box-shadow-color,
+      -5px 0 10px $box-shadow-color,
+      0 5px 10px $box-shadow-color,
+      0 -5px 10px $box-shadow-color;  // Aplicar una sombra con el color definido en múltiples direcciones
+  }
+
+  #menu {
+    ul {
+      li {
+        a {
+          color: $colorTexto;  // Cambiar el color del texto de enlaces a $colorTexto
+        }
+      }
+    }
+  }
+
+  .categoria {
+    a {
+      color: $colorTexto;  // Cambiar el color del texto de enlaces en categorías a $colorTexto
+    }
+  }
+
+  .btn {
+    background-color: $colorFondoBoton;  // Cambiar el color de fondo de los botones a $colorFondoBoton
+    color: $colorBoton;  // Cambiar el color del texto de los botones a $colorBoton
+  }
+
+  .linea {
+    border-bottom: 1px solid $border-color;  // Aplicar un borde inferior con el color definido a elementos con clase .linea
+  }
+
+  .categoria {
+    background-color: $background-colorCategorias;  // Aplicar el color de fondo de categorías
+  }
+
+  .fila1 {
+    border: 1px solid $border-color;  // Aplicar un borde con el color definido a elementos con clase .fila1
+  }
+
+  p {
+    &:nth-child(3) {
+      color: $colorPalabras;  // Cambiar el color del tercer párrafo a $colorPalabras
+    }
+  }
+
+  #titulo2 {
+    color: $colorPalabras;  // Cambiar el color del texto de elementos con ID #titulo2 a $colorPalabras
+  }
+}

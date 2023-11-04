@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); // Importa la fuente 'Roboto' de Google Fonts
+
+$primary-font: 'Roboto', sans-serif;  // Define la fuente principal como 'Roboto' y luego una fuente genérica sans-serif
+$font-size-large: large;  // Define el tamaño de fuente grande
+$marginLeftCategoria: 15px;  // Establece el margen izquierdo para categorías
+$fontStyle: italic;  // Establece el estilo de fuente a cursiva (italic)
+$display: flex;  // Establece la propiedad display como flex
+$flexDirectionColumn: column;  // Define la dirección de flexión como columna
+$flexDirectionFila: row;  // Define la dirección de flexión como fila
+$alineacionTexto: center;  // Establece la alineación de texto como centrada
+$marginLeftP: 5px;  // Establece el margen izquierdo para elementos de párrafo (p)
+$tamanoCategoria: 200px;  // Establece el tamaño de las categorías
+
+body {
+  font-family: $primary-font;  // Aplica la fuente 'Roboto' como fuente principal para el cuerpo
+}
+
+#header {
+  display: $display;  // Aplica la propiedad display definida (flex) al elemento con ID 'header'
+  flex-direction: $flexDirectionFila;  // Establece la dirección de flexión como fila para el elemento con ID 'header'
+  align-items: baseline;  // Alinea los elementos de manera que estén en la misma línea base
+
+  @media screen and (max-width: 670px) {
+    flex-direction: $flexDirectionColumn;  // Si la pantalla es más estrecha que 670px, cambia la dirección de flexión a columna
+    justify-content: space-between;  // Añade espacio entre los elementos hijos
+
+    #menu {
+      ul {
+        margin-top: 0;  // Elimina el margen superior de la lista no ordenada dentro del elemento con ID 'menu'
+      }
+
+      #titulo {
+        margin: 0 auto;  // Establece el margen superior e inferior a cero y centraliza el elemento con ID 'titulo'
+      }
+    }
+  }
+}
+
+#titulo {
+  flex-grow: 5;  // Hace que el elemento con ID 'titulo' crezca en flexbox con un factor de 5
+}
+
+#menu {
+  flex-grow: 1;  // Hace que el elemento con ID 'menu' crezca en flexbox con un factor de 1
+}
+
+.btn {
+  margin-right: 6px;  // Establece un margen derecho de 6px para los botones
+}
+
+#contenedor {
+  justify-content: space-between;  // Añade espacio entre los elementos y distribuye el espacio uniformemente
+  align-items: center;  // Alinea los elementos al centro
+  padding: 25px;  // Agrega relleno de 25px
+}
+
+#titulo h1 {
+  padding-bottom: 10px;  // Establece un relleno inferior de 10px para el encabezado h1 dentro del elemento con ID 'titulo'
+  margin-left: $marginLeftCategoria;  // Establece el margen izquierdo según la variable definida
+  font-style: $fontStyle;  // Aplica el estilo de fuente definido (cursiva)
+}
+
+#menu {
+  ul {
+    display: $display;  // Aplica la propiedad display definida (flex) a la lista dentro del elemento con ID 'menu'
+    list-style-type: none;  // Elimina los marcadores de lista
+
+    li {
+      margin-right: 20px;  // Establece un margen derecho de 20px para los elementos de lista (li)
+
+      a {
+        text-decoration: none;  // Elimina la decoración de subrayado de los enlaces (a)
+      }
+    }
+  }
+}
+
+.linea {
+  margin-top: 30px;  // Establece un margen superior de 30px
+  padding-bottom: 5px;  // Agrega relleno inferior de 5px
+  margin-left: $marginLeftCategoria;  // Establece el margen izquierdo según la variable definida
+  font-size: $font-size-large;  // Aplica el tamaño de fuente grande definido
+  box-sizing: border-box;  // Establece el modelo de caja como 'border-box'
+  width: $tamanoCategoria;  // Establece el ancho según la variable definida
+  text-align: $alineacionTexto;  // Aplica la alineación de texto definida (centrada)
+}
+
+.categoria {
+  margin-bottom: 20px;  // Establece un margen inferior de 20px
+  margin-left: $marginLeftCategoria;  // Establece el margen izquierdo según la variable definida
+  text-align: $alineacionTexto;  // Aplica la alineación de texto definida (centrada)
+  width: $tamanoCategoria;  // Establece el ancho según la variable definida
+  height: 50px;  // Establece la altura en 50px
+  padding: 14px;  // Agrega relleno de 14px
+  flex-direction: $flexDirectionFila;  // Aplica la dirección de flexión definida (fila)
+  margin-top: 10px;  // Establece un margen superior de 10px
+  box-sizing: border-box;  // Establece el modelo de caja como 'border-box'
+  border-radius: 10px;  // Agrega bordes redondeados a las categorías
+
+  a {
+    text-decoration: none;  // Elimina la decoración de subrayado de los enlaces (a) dentro de las categorías
+  }
+}
+
+.cajas {
+  display: $display;  // Aplica la propiedad display definida (flex) a los elementos con clase .cajas
+  flex-wrap: wrap;  // Permite que los elementos envuelvan a la siguiente línea si no caben
+  margin-right: 10px;  // Establece un margen derecho de 10px
+  margin-left: 12px;  // Establece un margen izquierdo de 12px
+  margin-top: 20px;  // Establece un margen superior de 20px
+  flex-direction: $flexDirectionFila;  // Aplica la dirección de flexión definida (fila)
+}
+
+.flex {
+  display: $display;  // Aplica la propiedad display definida (flex) a los elementos con clase .flex
+  flex-direction: $flexDirectionFila;  // Aplica la dirección de flexión definida (fila)
+}
+
+.fila1 {
+  margin-right: 15px;  // Establece un margen derecho de 15px
+  margin-bottom: 15px;  // Establece un margen inferior de 15px
+  width: 280px;  // Establece un ancho de 280px
+  display: $display;  // Aplica la propiedad display definida (flex) a los elementos con clase .fila1
+  flex-direction: $flexDirectionColumn;  // Aplica la dirección de flexión definida (columna)
+  flex-grow: 1;  // Hace que el elemento crezca en flexbox con un factor de 1
+  border-radius: 10px;  // Agrega bordes redondeados a fila1
+
+  p {
+    margin: 0;  // Establece el margen de los elementos de párrafo (p) en 0
+    &:nth-child(3) {
+      margin-left: $marginLeftP;  // Establece el margen izquierdo según la variable definida para el tercer párrafo
+    }
+    &:nth-child(2) {
+      margin-top: 7px;  // Establece un margen superior de 7px para el segundo párrafo
+      margin-left: $marginLeftP;  // Establece el margen izquierdo según la variable definida para el segundo párrafo
+    }
+  }
+}
+
+#titulo2 {
+  margin: 0;  // Establece el margen en 0
+  margin-left: $marginLeftCategoria;  // Establece el margen izquierdo según la variable definida
+  font-style: $fontStyle;  // Aplica el estilo de fuente definido (cursiva)
+}
